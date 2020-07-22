@@ -8,5 +8,16 @@ And I will try to provide every source code that I think will be helpfull for th
 And describe the process day by day and until I get the certification soon ~~
 
 ## Used Materials
+
+<img src="assets/img/book.jpg" align="right" height="150"/>
+
 The main book I use: 
 [PHP 7 Zend Certification Study Guide](https://www.amazon.com/PHP-Zend-Certification-Study-Guide-ebook/dp/B077G9Q6L5)
+
+I am currently following the tips of this book to prepare for the exam and refreshing my knowledge on the topic 
+and I should say the basics may not get attention but they play very important role on the exam so I have to 
+review basics more as according to this book, exam checks how well you know the fundamentals first, and then the rest. 
+Besides this book, other online sources will be added bellow: 
+* [PHP Documentaion](https://www.php.net/docs.php)
+* [Zend Main page](https://www.zend.com/)
+
