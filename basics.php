@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Basics</title>
+    <link rel="shortcut icon" href="https://azimjon.netlify.app/icons/php.png"/>
 </head>
 <body>
     <h1>echo '1' . (print'2') + 3; >> 
@@ -68,6 +69,15 @@
         double(12.3)
         double(720)
         */
+    ?>
+    <br>
+    <?php
+        echo (int)((0.1 + 0.3) * 10);
+        echo (int)((0.1 + 0.8) * 10);
+        echo "<br>";
+        $a = 'name';
+        $$a = 'AzimjonKamolov';
+        echo $name;
     ?>
 
 </body>

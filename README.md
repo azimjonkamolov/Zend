@@ -21,3 +21,31 @@ Besides this book, other online sources will be added bellow:
 * [PHP Documentaion](https://www.php.net/docs.php)
 * [Zend Main page](https://www.zend.com/)
 
+## Basics part
+
+Don't let the name "basics" fool you, even though this teaches you basic PHP elements this part is considered one of the main parts of the exam, and the exam has some tricky questions to confuse anyone such as this one bellow:
+~~~PHP
+    // Example One
+    // this was the question that I got in Medium
+    echo '1' . (print'2') + 3; // the answer is 214
+~~~
+Besides, the questions related to casting and variables ( as PHP also allows for variable variable names ) may confuse anyone:
+~~~PHP
+    // Related to casting
+    $a = '123';
+    $a = $a + 4;
+    echo $a;
+    $a = (int)$a;
+    echo $a + 8;
+    $a = (bool)$a;
+    echo $a + 8;
+    $a = 1234.56;
+    echo (int)$a; // 1234 (not 1235)
+    $a = -1234.56;
+    echo (int)$a; // -1234
+
+    // realated to variables
+    $varName = 'name';
+    $$varName = 'AzimjonKamolov';
+    echo $name;
+~~~
