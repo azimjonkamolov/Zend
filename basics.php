@@ -79,7 +79,6 @@
         $$a = 'AzimjonKamolov';
         echo $name;
     ?>
-
 </body>
 </html>
 

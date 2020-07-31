@@ -27,22 +27,23 @@ Don't let the name "basics" fool you, even though this teaches you basic PHP ele
 ~~~PHP
     // Example One
     // this was the question that I got in Medium
-    echo '1' . (print'2') + 3; // the answer is 214
+    echo '1' . (print'2') + 3; // gives 214
 ~~~
 Besides, the questions related to casting and variables ( as PHP also allows for variable variable names ) may confuse anyone:
 ~~~PHP
+    // Example Two 
     // Related to casting
-    $a = '123';
-    $a = $a + 4;
-    echo $a;
-    $a = (int)$a;
-    echo $a + 8;
-    $a = (bool)$a;
-    echo $a + 8;
-    $a = 1234.56;
-    echo (int)$a; // 1234 (not 1235)
-    $a = -1234.56;
-    echo (int)$a; // -1234
+    $value = '123';
+    $value = $value + 4; // gives 127
+    echo $value;
+    $value = (int)$value;
+    echo $value + 8; // gives 135
+    $value = (bool)$value;
+    echo $value + 8;    // gives 9
+    $value = 1234.56;
+    echo (int)$value; // 1234 (not 1235)
+    $value = -1234.56;
+    echo (int)$value; // -1234
 
     // realated to variables
     $varName = 'name';
