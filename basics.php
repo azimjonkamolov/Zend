@@ -51,25 +51,6 @@
 
     ?>
     <br>
-    <?php
-        $examples = [
-        "12 o clock",
-        "Half past 12",
-        "12.30",
-        "7.2e2 minutes after midnight"
-        ];
-        foreach ($examples as $example) {
-        $result = 0 + $example;
-        var_dump($result);
-        }
-        /*
-        This outputs:
-        int(12)
-        int(0)
-        double(12.3)
-        double(720)
-        */
-    ?>
     <br>
     <?php
         echo (int)((0.1 + 0.3) * 10);
@@ -79,6 +60,34 @@
         $$a = 'AzimjonKamolov';
         echo $name;
     ?>
+
+    <?php
+        echo "Ternary Operator";
+        $random_value = 'value';
+        $check_value = (isset($random_value))? 'true' : 'false';
+        echo "<br>";
+        echo $check_value;
+    ?>
+    <?php
+        echo "Null Coalescing Operator";
+        // Long form ternary syntax
+        $sort_direction = (isset($_GET['sort_dir'])) ? $_GET['sort_dir'] : 'ASC';
+
+        // Equivalent syntax using the null coalescing operator
+        $sort_direction = $_GET['sort_dir'] ?? 'ASC';
+
+        // The null-coalesce operator can be chained
+        $sort_direction = $_GET['sort_dir'] ?? $default_sort_dir ?? 'ASC';
+
+        // The Elvis operator raises E_NOTICE if the GET variable is not set
+        $sort_direction = $_GET['sort_dir'] ?: 'ASC';
+
+        
+    ?>
+    <form action="" method="GET">
+        <input type="hidden" name="sort_dir" value="1">
+    </form>
+    
 </body>
 </html>
 
