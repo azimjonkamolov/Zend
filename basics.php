@@ -84,10 +84,22 @@
 
         
     ?>
-    <form action="" method="GET">
+    <!-- <form action="" method="GET">
         <input type="hidden" name="sort_dir" value="1">
-    </form>
+    </form> -->
     
+    <?php
+        echo "<br><h1>Assignment Operators</h1>";
+        $test = 123;
+        $test += 345;
+        echo $test;
+        echo "<br>";
+        $test .='foo';
+        echo $test;
+        echo "<br>";
+    ?>
+
+
 </body>
 </html>
 
