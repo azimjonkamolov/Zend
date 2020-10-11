@@ -99,6 +99,44 @@
         echo "<br>";
     ?>
 
+    <?php
+        $arr = [
+            'a' => 'one', 'b' => 'two', 'c' => 'threee'
+        ];
+        foreach($arr as $value){
+            echo $value; // one, two, three
+            echo "<br>";
+        }
+        
+        foreach($arr as $key => $value){
+            echo $key; // a,b,c
+            echo "<br>";
+            echo $value; // one, two, three
+            echo "<br>";
+        }
+        echo "<br>";
+    ?>
+    <?php
+        // $a = "new string";
+        // $b = & $a;
+        // the variable b points to the variable a
+        // xdebug_debug_zval('a');
+        // xdebug_debug_zval('b');
+        // change the string and see that the refcount is reset
+        // $b = 'changed string';
+        // xdebug_debug_zval('a');
+        // xdebug_debug_zval('b');
+
+        echo "<br>";
+        echo "Here > ";
+
+        $aa = "Hello";
+        $BB = "world";
+        ECHO $aa . $bb;
+        echo 6 / "two";
+
+    ?>
+    
 
 </body>
 </html>
