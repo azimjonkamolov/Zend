@@ -15,4 +15,27 @@
         echo gettype($value);
     }
     giveOutput(100);
+    echo "<br>";
+?>
+<?php
+    function myFunc(?MyObject $myObj){
+        echo "hello world";
+    }
+    // this is allowed
+    myFunc(null);
+    // this produces a fatal error: Too few arguments
+    // myFunc();
+    echo "<br>";
+?>
+<?php
+    // In the following example, if the used does not supply a message, the function assumes it will be world
+    function sayHi($message = 'user'){
+        echo "Hello $message";
+    }
+    // case 1: assumes the message is as given above
+    sayHi();
+    echo "<br>";
+    // case 2: assumes the given message
+    sayHi($message = "Azimjon");
+    echo "<br>";
 ?>

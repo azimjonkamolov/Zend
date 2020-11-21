@@ -37,50 +37,50 @@
     </p>
 
     <?php
-        $a = '123';
-        $a = $a + 4;
-        echo $a;
-        $a = (int)$a;
-        echo $a + 8;
-        $a = (bool)$a;
-        echo $a + 8;
-        $a = 1234.56;
-        echo (int)$a; // 1234 (not 1235)
-        $a = -1234.56;
-        echo (int)$a; // -1234
+        // $a = '123';
+        // $a = $a + 4;
+        // echo $a;
+        // $a = (int)$a;
+        // echo $a + 8;
+        // $a = (bool)$a;
+        // echo $a + 8;
+        // $a = 1234.56;
+        // echo (int)$a; // 1234 (not 1235)
+        // $a = -1234.56;
+        // echo (int)$a; // -1234
 
     ?>
     <br>
     <br>
     <?php
-        echo (int)((0.1 + 0.3) * 10);
-        echo (int)((0.1 + 0.8) * 10);
-        echo "<br>";
-        $a = 'name';
-        $$a = 'AzimjonKamolov';
-        echo $name;
+        // echo (int)((0.1 + 0.3) * 10);
+        // echo (int)((0.1 + 0.8) * 10);
+        // echo "<br>";
+        // $a = 'name';
+        // $$a = 'AzimjonKamolov';
+        // echo $name;
     ?>
 
     <?php
-        echo "Ternary Operator";
-        $random_value = 'value';
-        $check_value = (isset($random_value))? 'true' : 'false';
-        echo "<br>";
-        echo $check_value;
+        // echo "Ternary Operator";
+        // $random_value = 'value';
+        // $check_value = (isset($random_value))? 'true' : 'false';
+        // echo "<br>";
+        // echo $check_value;
     ?>
     <?php
-        echo "Null Coalescing Operator";
-        // Long form ternary syntax
-        $sort_direction = (isset($_GET['sort_dir'])) ? $_GET['sort_dir'] : 'ASC';
+        // echo "Null Coalescing Operator";
+        // // Long form ternary syntax
+        // $sort_direction = (isset($_GET['sort_dir'])) ? $_GET['sort_dir'] : 'ASC';
 
-        // Equivalent syntax using the null coalescing operator
-        $sort_direction = $_GET['sort_dir'] ?? 'ASC';
+        // // Equivalent syntax using the null coalescing operator
+        // $sort_direction = $_GET['sort_dir'] ?? 'ASC';
 
-        // The null-coalesce operator can be chained
-        $sort_direction = $_GET['sort_dir'] ?? $default_sort_dir ?? 'ASC';
+        // // The null-coalesce operator can be chained
+        // $sort_direction = $_GET['sort_dir'] ?? $default_sort_dir ?? 'ASC';
 
-        // The Elvis operator raises E_NOTICE if the GET variable is not set
-        $sort_direction = $_GET['sort_dir'] ?: 'ASC';
+        // // The Elvis operator raises E_NOTICE if the GET variable is not set
+        // $sort_direction = $_GET['sort_dir'] ?: 'ASC';
 
         
     ?>
@@ -89,32 +89,32 @@
     </form> -->
     
     <?php
-        echo "<br><h1>Assignment Operators</h1>";
-        $test = 123;
-        $test += 345;
-        echo $test;
-        echo "<br>";
-        $test .='foo';
-        echo $test;
-        echo "<br>";
+        // echo "<br><h1>Assignment Operators</h1>";
+        // $test = 123;
+        // $test += 345;
+        // echo $test;
+        // echo "<br>";
+        // $test .='foo';
+        // echo $test;
+        // echo "<br>";
     ?>
 
     <?php
-        $arr = [
-            'a' => 'one', 'b' => 'two', 'c' => 'threee'
-        ];
-        foreach($arr as $value){
-            echo $value; // one, two, three
-            echo "<br>";
-        }
+        // $arr = [
+        //     'a' => 'one', 'b' => 'two', 'c' => 'threee'
+        // ];
+        // foreach($arr as $value){
+        //     echo $value; // one, two, three
+        //     echo "<br>";
+        // }
         
-        foreach($arr as $key => $value){
-            echo $key; // a,b,c
-            echo "<br>";
-            echo $value; // one, two, three
-            echo "<br>";
-        }
-        echo "<br>";
+        // foreach($arr as $key => $value){
+        //     echo $key; // a,b,c
+        //     echo "<br>";
+        //     echo $value; // one, two, three
+        //     echo "<br>";
+        // }
+        // echo "<br>";
     ?>
     <?php
         // $a = "new string";
@@ -127,14 +127,48 @@
         // xdebug_debug_zval('a');
         // xdebug_debug_zval('b');
 
+        // echo "<br>";
+        // echo "Here > ";
+
+        // $aa = "Hello";
+        // $BB = "world";
+        // ECHO $aa . $bb;
+        // echo 6 / "two";
+
+    ?>
+    <?php
         echo "<br>";
-        echo "Here > ";
+        echo "Your name is ";
+        echo "User"
+    ?>
 
-        $aa = "Hello";
-        $BB = "world";
-        ECHO $aa . $bb;
-        echo 6 / "two";
+    <?php
+        echo "<br>";
+        $first = "Kim";
+        $second = "Tim";
+        $third = $first . $second;
+        echo $third;
+        echo "<br>";
+        echo (int) ((0.1+0.7)*10);
+        echo "<br>";
+        echo (int) ((0.1+0.5)*10);
+        echo "<br>";
+    ?>
 
+    <?php
+        $server = [
+            'Host Server Name' => $_SERVER['SERVER_NAME']
+        ];
+
+        echo $server['Host Server Name'];
+        echo "<br>";
+        echo __LINE__ . "<br>";
+        $a = 1;
+        echo $a++;
+        echo ++$a;
+        echo $a--;
+        echo --$a;
+        echo 5 / "five";
     ?>
     
 
