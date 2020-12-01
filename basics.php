@@ -1,180 +1,146 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basics</title>
-    <link rel="shortcut icon" href="https://azimjon.netlify.app/icons/php.png"/>
-</head>
-<body>
-    <h1>echo '1' . (print'2') + 3; >> 
-        <?php
-            // if the file only contains php closing bracets can be skipped
-            echo '1' . (print'2') + 3;  // this was the question that I got in Medium
-            $myvar = 'AzimjonKamolov'
-        ?>
-    </h1>
-    <h1>
-    <?=$myvar?>
-    </h1>
-    <h2>Some Others:
-        <?php
-            echo $myvar
-        ?>
-    </h2>
+<?php
+    echo "<h1>Basics</h1>";
+    echo "\nConverting Between Data Types";
+    echo "<br>";
+    $x = 10.88;
+    echo (int) $x; // Outputs 10
 
-    <h1>We can use PHP logic between opening and closing tags </h1>
+    echo "<br>";
+    echo "<br/>Variables";
+    echo "<br>";
+    $name = "valid"; // Valid name
+    $_name = "valid"; // Valid name
+    # $1name = "invalid"; // Invalid name
 
-    Your bank balance :
-    <?php
-    $balance = -4;
-    if ($balance > 0): ?>
-        <p style="color: green">
-    <?php else: ?>
-        <p style="color: red">
-    <?php endif; ?>
-    <?=$balance ?>
-    </p>
+    echo "<br>";
+    echo "<br/>Variable Variables";
+    echo "<br>";
+    $name = "one";
+    $$name = "two";
+    echo $one; // Displays 'two'
+    $name = "123"; // 123 is your variable name, this would normally be invalid
+    $$name = "456"; // Again, you assign a value
+    echo "<br>";
+    echo ${'123'};
+    echo "<br>";
+    function myFunc(){
+        echo "myFunc!";
+    }
+    $f = "myFunc";
+    $f(); // Will call myFunc();
+    echo "<br>";
+    echo isset($f);
 
-    <?php
-        // $a = '123';
-        // $a = $a + 4;
-        // echo $a;
-        // $a = (int)$a;
-        // echo $a + 8;
-        // $a = (bool)$a;
-        // echo $a + 8;
-        // $a = 1234.56;
-        // echo (int)$a; // 1234 (not 1235)
-        // $a = -1234.56;
-        // echo (int)$a; // -1234
+    echo "<br>";
+    echo "<br/>Constants";
+    echo "<br>";
+    define('EMAIL', 'azimjonkamolov@naver.com'); // Valid name
+    echo EMAIL; // Displays 'azimjonkamolov@naver.com'
+    define('USE_XML', true);
+    if(USE_XML){ // Evaluates to true
+        echo "<br/>It is the case";
+    }
+    define('1CONSTANT', 'some value'); // Invalid name
+    # echo 1CONSTANT;
 
-    ?>
-    <br>
-    <br>
-    <?php
-        // echo (int)((0.1 + 0.3) * 10);
-        // echo (int)((0.1 + 0.8) * 10);
-        // echo "<br>";
-        // $a = 'name';
-        // $$a = 'AzimjonKamolov';
-        // echo $name;
-    ?>
+    echo "<br>";
+    echo "<br/>Operators";
+    echo "<br>";
+    $val = 1; // Assign the integer 1 to $val
+    echo $val++; // Outputs 1, $val is now equal to 2
+    echo ++$val; // Outputs 3, $val is now equal to 3
+    echo --$val; // Outputs 2, $val is now equal to 2
+    echo $val--; // Outputs 2, $val is now equal to 1
+    $test = 'Test';
+    echo ++$test; // Outputs Tesu in PHP 7.4
 
-    <?php
-        // echo "Ternary Operator";
-        // $random_value = 'value';
-        // $check_value = (isset($random_value))? 'true' : 'false';
-        // echo "<br>";
-        // echo $check_value;
-    ?>
-    <?php
-        // echo "Null Coalescing Operator";
-        // // Long form ternary syntax
-        // $sort_direction = (isset($_GET['sort_dir'])) ? $_GET['sort_dir'] : 'ASC';
+    echo "<br>";
+    echo "<br/>The String Concatenation Operator";
+    echo "<br>";
+    $name = "Azim" . "jon"; // $name now contains the value 'Azimjon'
+    $surname = " Kamolov"; // $surname now contains the value ' Kamolov'
+    $name .= $surname; // After concatenationg the two variables, we end up with 'Azimjon Kamolov'
+    echo $name; // Displays 'Azimjon Kamolov'
 
-        // // Equivalent syntax using the null coalescing operator
-        // $sort_direction = $_GET['sort_dir'] ?? 'ASC';
+    echo "<br>";
+    echo "<br/>Bitwise Operators";
+    echo "<br>";
+    $value = 0;
+    echo ~$value; // Will output -1
+    $value = 1;
+    echo $value << 1; // Outputs 2
+    echo $value << 2; // Outputs 4
+    $value = 8;
+    echo $value >> 1; // Outputs 4
+    echo $value >> 2; // Outputs 2
+    $value = 1;
+    echo $value << 32;
+    echo $value * pow(2, 32);
 
-        // // The null-coalesce operator can be chained
-        // $sort_direction = $_GET['sort_dir'] ?? $default_sort_dir ?? 'ASC';
+    echo "<br>";
+    echo "<br/>Referencing Variables";
+    echo "<br>";
+    $a = 10;
+    $b = $a;
+    $b = 20;
+    echo $a; // Outputs 10
+    $a = 10;
+    $b = &$a;
+    $b = 20;
+    echo $a; // Outputs 20
 
-        // // The Elvis operator raises E_NOTICE if the GET variable is not set
-        // $sort_direction = $_GET['sort_dir'] ?: 'ASC';
-
-        
-    ?>
-    <!-- <form action="" method="GET">
-        <input type="hidden" name="sort_dir" value="1">
-    </form> -->
+    echo "<br>";
+    echo "<br/>Comparison Operators";
+    echo "<br>";
+    $left = "ABC";
+    $right = "ABD";
+    echo (int) ($left > $right);
+    $left = "apple"; // a = 97
+    $right = "Apple"; // A = 65
+    echo (int) ($left > $right);
     
-    <?php
-        // echo "<br><h1>Assignment Operators</h1>";
-        // $test = 123;
-        // $test += 345;
-        // echo $test;
-        // echo "<br>";
-        // $test .='foo';
-        // echo $test;
-        // echo "<br>";
-    ?>
+    echo "<br>";
+    echo "<br/>Conditional Structures";
+    echo "<br>";
+    echo 10 == $x ? 'Yes' : 'No';
+    $a = 0;
+    if ($a) {// Evaluates to false
+    } elseif ($a == 0) {// Evaluates to true
+    } else {// Will only be executed if no other conditions are met
+    }
 
-    <?php
-        // $arr = [
-        //     'a' => 'one', 'b' => 'two', 'c' => 'threee'
-        // ];
-        // foreach($arr as $value){
-        //     echo $value; // one, two, three
-        //     echo "<br>";
-        // }
-        
-        // foreach($arr as $key => $value){
-        //     echo $key; // a,b,c
-        //     echo "<br>";
-        //     echo $value; // one, two, three
-        //     echo "<br>";
-        // }
-        // echo "<br>";
-    ?>
-    <?php
-        // $a = "new string";
-        // $b = & $a;
-        // the variable b points to the variable a
-        // xdebug_debug_zval('a');
-        // xdebug_debug_zval('b');
-        // change the string and see that the refcount is reset
-        // $b = 'changed string';
-        // xdebug_debug_zval('a');
-        // xdebug_debug_zval('b');
+    echo "<br>";
+    echo "<br/>Iterative Constructs";
+    echo "<br>";
+    $i = 0;
+    while ($i < 10) {
+        echo $i . PHP_EOL;
+        $i++;
+    }
+    $i = 0;
+    do {
+        echo $i . PHP_EOL;
+        $i++;
+    } while ($i < 10);
+    for ($i = 0; $i < 10;$i++) {
+        echo $i . PHP_EOL;
+    }
 
-        // echo "<br>";
-        // echo "Here > ";
-
-        // $aa = "Hello";
-        // $BB = "world";
-        // ECHO $aa . $bb;
-        // echo 6 / "two";
-
-    ?>
-    <?php
-        echo "<br>";
-        echo "Your name is ";
-        echo "User"
-    ?>
-
-    <?php
-        echo "<br>";
-        $first = "Kim";
-        $second = "Tim";
-        $third = $first . $second;
-        echo $third;
-        echo "<br>";
-        echo (int) ((0.1+0.7)*10);
-        echo "<br>";
-        echo (int) ((0.1+0.5)*10);
-        echo "<br>";
-    ?>
-
-    <?php
-        $server = [
-            'Host Server Name' => $_SERVER['SERVER_NAME']
-        ];
-
-        echo $server['Host Server Name'];
-        echo "<br>";
-        echo __LINE__ . "<br>";
-        $a = 1;
-        echo $a++;
-        echo ++$a;
-        echo $a--;
-        echo --$a;
-        echo 5 / "five";
-    ?>
-    
-
-</body>
-</html>
+    // echo "<br>";
+    // echo "<br/>Handling Errors";
+    // echo "<br>";
+    // $oldErrorHandler = '';
+    // function myErrorHandler ($errNo, $errStr, $errFile, $errLine, $errContext) {
+    //     logToFile("Error $errStr in $errFile at line $errLine");// Call the old error handler
+    //     if ($oldErrorHandler) {
+    //         $oldErrorHandler ($errNo, $errStr, $errFile, $errLine, $errContext);
+    //     }
+    // }
+    // $oldErrorHandler = set_error_handler ($oldErrorHandler);
+     
 
 
 
 
+
+?>
