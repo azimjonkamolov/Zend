@@ -1,6 +1,7 @@
 <?php
     echo "<h1>Functions</h1>";
-    echo "\nBasic Syntax";
+    
+    echo "Basic Syntax";
     echo "<br>";
     function hello(){
         echo "Hello World";
