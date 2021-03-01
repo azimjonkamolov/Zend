@@ -48,5 +48,52 @@
     echo "<br>";
     $obj = new MyClass();
     $obj->myFunction();
+    echo "<br>";
+    class MyValue{
+        function myFunction($data){
+            echo "The value is $data";
+        }
+        function callMyFunction($data){
+            // Call myFunction()
+            $this->myFunction($data);
+        }
+    }
+    $obj = new myValue();
+    $obj->callMyFunction(123);
+    class myConst{
+        function __construct(){
+            echo __METHOD__ . " not called thou!";
+        }
+        function __destruct(){
+            echo __METHOD__ . " not called thou!";
+        }
+    }
+    echo "<br>";
+    $value = new myConst();
+    echo "<br>";
+    class ClassOne{
+        public $one = 'bar';
+        protected $two = 'bat';
+        private $three = 'bingo';
+        function __construct(){
+            var_dump(get_object_vars($this));
+        }
+    }
+    class ClassTwo extends ClassOne{
+        function __construct(){
+            var_dump(get_object_vars($this));
+        }
+    }
+    class ClassThree{
+        function __construct(){
+            $one = new ClassOne();
+            var_dump(get_object_vars($one));
+        }
+    }
+    new ClassOne();
+    new ClassTwo();
+    new ClassThree();
+
+
     
 ?>
